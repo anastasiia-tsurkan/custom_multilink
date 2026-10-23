@@ -10,6 +10,10 @@ const assert = require('node:assert/strict');
  for (const width of [320,390,768,1440]) {
   await page.setViewportSize({width,height:1000});
   await page.goto('http://127.0.0.1:8000/');
+  const cover = page.locator('.hero-image img');
+  await cover.evaluate(img => img.decode());
+  assert((await cover.evaluate(img => img.currentSrc)).endsWith(width <= 760 ? '/assets/cover-mobile.png' : '/assets/cover-desktop.jpg'), 'Wrong responsive cover');
+  assert(await page.locator('.brand img, footer img').evaluateAll(images => images.every(img => img.complete && img.naturalWidth > 0)), 'Logo did not load');
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`Overflow at ${width}`);
   await page.locator('label').filter({has:page.locator('input[name="amount"][value="50"]')}).click();
   assert.match(await page.locator('#checkout').textContent(),/\$50 per month/);
