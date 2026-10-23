@@ -42,7 +42,14 @@
     "PREVIEW ONLY": "ТОЛЬКО ДЕМОВЕРСИЯ",
     "Donation preview": "Демонстрация пожертвования",
     "Got it": "Понятно",
-    "The GivingFuel form is a demo. Other donation options open the provider’s website.": "Форма GivingFuel демонстрационная. Другие способы пожертвования открывают сайт платёжного сервиса."
+    "GivingFuel checkout": "Переход к GivingFuel",
+    "Give hope. Make a difference.": "Дарите надежду. Меняйте жизни.",
+    "Safe shelter for girls in West Pokot": "Безопасный приют для девочек в Западном Покоте",
+    "Choose your donation amount and frequency on GivingFuel, then complete your donation on its checkout page.": "Выберите сумму и периодичность пожертвования на GivingFuel и завершите его на странице платёжного сервиса.",
+    "Donate now": "Пожертвовать",
+    "Opens GivingFuel in a new tab. No payment details are collected on this site.": "GivingFuel откроется в новой вкладке. Этот сайт не собирает платёжные данные.",
+    "Donations are completed on GivingFuel. Other options open the provider’s website.": "Пожертвования совершаются на GivingFuel. Другие способы помощи открывают сайт платёжного сервиса.",
+    "INFORMATION": "ИНФОРМАЦИЯ"
   },
   "runtime": {
     "gift": "Ваш взнос",

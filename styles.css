@@ -12,3 +12,5 @@
 .payment-links a{text-decoration:none}.social a{text-decoration:none}.social a:hover{text-decoration:underline}
 /* Zoom and shift only the desktop photograph; preserve the mobile cover. */
 @media(min-width:761px){.hero-image img{width:120%;max-width:none;transform:translateX(-15%);object-position:center 52%}}
+
+.hosted-donation h2{font-size:32px;line-height:1.15;margin:0 0 20px}.provider-label{font-size:12px;letter-spacing:2px;font-weight:bold;color:var(--muted);margin:0 0 18px}.campaign-name{background:var(--cream);border-radius:12px;padding:16px;font-size:18px;font-weight:bold;margin:0 0 20px}.hosted-description{color:var(--muted);font-size:16px;margin:0 0 24px}.givingfuel-link{display:block;text-align:center;text-decoration:none}.hosted-donation{padding:30px}.hosted-donation .checkout{line-height:1.6}@media(max-width:760px){.hosted-donation{padding:24px 20px}.hosted-donation h2{font-size:28px}}

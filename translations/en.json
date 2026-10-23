@@ -42,7 +42,14 @@
     "PREVIEW ONLY": "PREVIEW ONLY",
     "Donation preview": "Donation preview",
     "Got it": "Got it",
-    "The GivingFuel form is a demo. Other donation options open the provider’s website.": "The GivingFuel form is a demo. Other donation options open the provider’s website."
+    "GivingFuel checkout": "GivingFuel checkout",
+    "Give hope. Make a difference.": "Give hope. Make a difference.",
+    "Safe shelter for girls in West Pokot": "Safe shelter for girls in West Pokot",
+    "Choose your donation amount and frequency on GivingFuel, then complete your donation on its checkout page.": "Choose your donation amount and frequency on GivingFuel, then complete your donation on its checkout page.",
+    "Donate now": "Donate now",
+    "Opens GivingFuel in a new tab. No payment details are collected on this site.": "Opens GivingFuel in a new tab. No payment details are collected on this site.",
+    "Donations are completed on GivingFuel. Other options open the provider’s website.": "Donations are completed on GivingFuel. Other options open the provider’s website.",
+    "INFORMATION": "INFORMATION"
   },
   "runtime": {
     "gift": "Your gift",

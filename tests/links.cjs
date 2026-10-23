@@ -1,6 +1,7 @@
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 const expected=[
+'https://imoce.givingfuel.com/safe-shelter-for-girls-in-west-pokot',
 'https://www.instagram.com/mission_imoce/', 'https://www.facebook.com/imoce',
 'https://www.imoce.org/', 'https://www.youtube.com/@imocemanuel',
 'https://venmo.com/u/Anatoliy-Kolomiyets', 'https://www.paypal.com/paypalme/imoce',
@@ -27,6 +28,6 @@ await page.setViewportSize({width:1440,height:1000});await page.goto('http://127
 await page.screenshot({path:'artifacts/linked-desktop.png',fullPage:true});
 await page.locator('.trust-icon').nth(1).screenshot({path:'artifacts/handshake.png'});
 await page.setViewportSize({width:390,height:1000});await page.screenshot({path:'artifacts/linked-mobile.png',fullPage:true});
-console.log('PASS: all 7 external links open exact supplied URLs in 3 languages (navigation intercepted; no payment requests made).');
+console.log('PASS: all 8 external links open exact supplied URLs in 3 languages (navigation intercepted; no payment requests made).');
 }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exitCode=1});
