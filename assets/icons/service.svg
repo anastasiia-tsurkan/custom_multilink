@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#50667d" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"><path d="M13 36C-7 18 15-7 32 13 49-7 71 18 51 37M32 13 22 23c-5 5 3 10 8 5l6-5c2-2 4-1 6 1l14 15c6 6-2 12-6 7L42 38m8 8c5 6-3 11-7 6l-7-8m7 8c3 5-4 9-8 5l-5-5"/><path d="m12 32-4 4c-5 5 1 11 5 7l7-7c4-4-2-10-6-6l-2 2Zm8 4-7 7c-5 5 1 11 6 6l7-7c4-4-2-10-6-6Zm6 6-7 7c-4 5 2 10 6 6l7-7c4-4-2-10-6-6Zm6 6-6 6 5 5c5 5 11-2 6-6l-5-5Z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke="#50667d" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M19 62C-6 38 10 7 31 11c10 1 16 8 23 15M54 26C75 2 99 10 107 29c5 13 0 25-9 36"/>
+  <path d="m54 26-19 18c-9 9 3 19 11 11l14-13 40 39c10 10-1 20-10 11L76 78m14 14c8 9-3 19-11 11L64 88m15 15c5 9-6 16-13 9l-9-9"/>
+  <rect x="9" y="58" width="30" height="15" rx="7.5" transform="rotate(-45 24 65.5)"/>
+  <rect x="17" y="70" width="38" height="15" rx="7.5" transform="rotate(-45 36 77.5)"/>
+  <rect x="30" y="81" width="38" height="15" rx="7.5" transform="rotate(-45 49 88.5)"/>
+  <rect x="44" y="94" width="30" height="15" rx="7.5" transform="rotate(-45 59 101.5)"/>
+  <path d="m65 107 8 8c-1 10-11 10-17 4l-6-6"/>
+</svg>

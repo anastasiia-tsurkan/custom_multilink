@@ -25,7 +25,6 @@
     "Other ways to give": "Другие способы помочь",
     "Our commitment": "Наши обязательства",
     "Secure donation": "Безопасное пожертвование",
-    "GivingFuel is the planned checkout provider. Payments are disabled in this preview.": "Платежи планируется принимать через GivingFuel. В этой демоверсии они отключены.",
     "25+ Years of Service": "Более 25 лет служения",
     "Serving communities and meeting real needs for over 25 years.": "Помогаем сообществам и отвечаем на их потребности более 25 лет.",
     "Real, Measurable Impact": "Реальные, измеримые перемены",
@@ -42,7 +41,8 @@
     "Close dialog": "Закрыть диалог",
     "PREVIEW ONLY": "ТОЛЬКО ДЕМОВЕРСИЯ",
     "Donation preview": "Демонстрация пожертвования",
-    "Got it": "Понятно"
+    "Got it": "Понятно",
+    "The GivingFuel form is a demo. Other donation options open the provider’s website.": "Форма GivingFuel демонстрационная. Другие способы пожертвования открывают сайт платёжного сервиса."
   },
   "runtime": {
     "gift": "Ваш взнос",

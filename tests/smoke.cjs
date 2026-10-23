@@ -35,5 +35,5 @@ const assert = require('node:assert/strict');
   await page.screenshot({path:`artifacts/preview-${width}.png`,fullPage:true});
  }
  assert.deepEqual(errors,[]);assert.deepEqual(outbound,[]);
- await browser.close();console.log('PASS: 320, 390, 768, 1440px; amount/frequency, custom validation, 9 placeholder buttons, dialogs, no overflow, no external requests or JS errors.');
+ await browser.close();console.log('PASS: 320, 390, 768, 1440px; amount/frequency, custom validation, 2 legal placeholder buttons, dialogs, no overflow, no external requests or JS errors.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -25,7 +25,6 @@
     "Other ways to give": "Other ways to give",
     "Our commitment": "Our commitment",
     "Secure donation": "Secure donation",
-    "GivingFuel is the planned checkout provider. Payments are disabled in this preview.": "GivingFuel is the planned checkout provider. Payments are disabled in this preview.",
     "25+ Years of Service": "25+ Years of Service",
     "Serving communities and meeting real needs for over 25 years.": "Serving communities and meeting real needs for over 25 years.",
     "Real, Measurable Impact": "Real, Measurable Impact",
@@ -42,7 +41,8 @@
     "Close dialog": "Close dialog",
     "PREVIEW ONLY": "PREVIEW ONLY",
     "Donation preview": "Donation preview",
-    "Got it": "Got it"
+    "Got it": "Got it",
+    "The GivingFuel form is a demo. Other donation options open the provider’s website.": "The GivingFuel form is a demo. Other donation options open the provider’s website."
   },
   "runtime": {
     "gift": "Your gift",

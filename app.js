@@ -1,5 +1,5 @@
 'use strict';
-// Deliberately inert: no SDK, iframe, request, or live payment URL is loaded.
+// GivingFuel remains a local demo; external donation links open only on user navigation.
 const form = document.querySelector('#donation-form');
 const custom = document.querySelector('#custom-amount');
 const modal = document.querySelector('#notice');
