@@ -25,7 +25,7 @@ const assert = require('node:assert/strict');
   assert.equal(await page.locator('dialog').isVisible(),false);
   await page.locator('#custom-amount').fill('37.50');
   await page.locator('button[type="submit"]').click();
-  assert.match(await page.locator('#notice-text').textContent(),/37.5 one-time/);
+  assert.match(await page.locator('#notice-text').textContent(),/37.50 one-time/);
   await page.keyboard.press('Escape');
   for (const button of await page.locator('[data-demo]').all()) {
    await button.click(); assert(await page.locator('dialog').isVisible());

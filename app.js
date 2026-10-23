@@ -3,6 +3,11 @@
 const form = document.querySelector('#donation-form');
 const custom = document.querySelector('#custom-amount');
 const modal = document.querySelector('#notice');
+const language = document.documentElement.lang;
+const dictionary = window.PAGE_TRANSLATIONS[language] || window.PAGE_TRANSLATIONS.en;
+const t = (key, values = {}) => dictionary.runtime[key].replace(/\{(\w+)\}/g, (_, name) => values[name] ?? '');
+const text = value => dictionary.text[value] || value;
+const currency = amount => new Intl.NumberFormat(language, {style:'currency', currency:'USD', maximumFractionDigits:2}).format(amount);
 let previousFocus;
 function showNotice(title, text) {
   previousFocus = document.activeElement;
@@ -21,22 +26,25 @@ function update() {
   document.querySelector('#custom-wrap').hidden = !other;
   const {amount, monthly} = selection();
   const valid = Number.isFinite(amount) && amount >= 1 && amount <= 1000000;
-  const formatted = valid ? new Intl.NumberFormat('en-US', {style:'currency',currency:'USD',maximumFractionDigits:2}).format(amount).replace(/\.00$/, '') : 'Your gift';
-  document.querySelector('#checkout').textContent = `${formatted}${monthly ? ' per month' : ' one-time'} · GivingFuel demo`;
-  document.querySelector('#impact-text').textContent = amount === 25 && monthly ? '$25/month helps provide education and daily meals for a child.' : `${formatted}${monthly ? ' each month' : ''} can help support education and daily meals.`;
+  const formatted = valid ? currency(amount).replace(/\.00$/, '') : t('gift');
+  document.querySelector('#checkout').textContent = `${formatted}${t(monthly ? 'month' : 'once')} · ${t('demo')}`;
+  document.querySelector('#impact-text').textContent = amount === 25 && monthly ? text('$25/month helps provide education and daily meals for a child.') : t('impact', {amount:formatted, period:monthly ? t('each') : ''});
 }
 form.addEventListener('change', update);
-custom.addEventListener('input', update);
+custom.addEventListener('input', () => { custom.setCustomValidity(''); update(); });
+custom.addEventListener('invalid', () => custom.setCustomValidity(t('invalid')));
+form.addEventListener('change', () => custom.setCustomValidity(''));
 form.addEventListener('submit', event => {
   event.preventDefault();
   if (!form.reportValidity()) return;
   const {amount, monthly} = selection();
   if (!Number.isFinite(amount) || amount < 1 || amount > 1000000) return;
-  showNotice('Thank you for your generosity', `You selected $${amount.toLocaleString('en-US', {maximumFractionDigits:2})}${monthly ? ' monthly' : ' one-time'}. This is a demonstration of the GivingFuel form. No payment has been made and no information has been sent.`);
+  showNotice(t('thanks'), t('selected', {amount:currency(amount), period:t(monthly ? 'month' : 'once')}));
 });
 document.querySelectorAll('[data-demo]').forEach(button => button.addEventListener('click', () => {
   const name = button.dataset.demo;
-  showNotice(name, ['Venmo','PayPal','Cash App'].includes(name) ? `${name} donations are not connected in this preview. No payment will be made.` : `${name} content or link will be added after approval. This placeholder does not open an external website.`);
+  const label = text(name === 'Website' ? 'Site' : name);
+  showNotice(label, t(['Venmo','PayPal','Cash App'].includes(name) ? 'payment' : 'placeholder', {name:label}));
 }));
 document.querySelectorAll('.close,.dismiss').forEach(button => button.addEventListener('click', () => modal.close()));
 modal.addEventListener('close', () => previousFocus?.focus());

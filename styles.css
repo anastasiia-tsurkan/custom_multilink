@@ -5,3 +5,6 @@
 /* Decorative trust icons, drawn as vectors from the supplied references. */
 .trust-icon{display:block;width:56px;height:56px;object-fit:contain;margin-bottom:16px}
 @media(max-width:760px){.trust-grid article{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:16px}.trust-icon{width:44px;height:44px;grid-column:1;grid-row:1 / span 2;margin:0}.trust-grid article h3,.trust-grid article p{grid-column:2}}
+
+.languages{display:flex;gap:2px;border:2px solid var(--line);border-radius:28px;padding:3px;flex:none}.languages a{display:grid;place-items:center;min-width:36px;min-height:36px;border-radius:22px;text-decoration:none;color:var(--navy);font-size:12px;font-weight:bold}.languages a[aria-current="page"]{background:var(--navy);color:white}.languages a:hover{background:var(--cream);color:var(--navy)}
+@media(max-width:760px){.brand span{max-width:100px;font-size:8px}.languages a{min-width:29px;min-height:34px;font-size:11px}.header{gap:8px}.intro h1{overflow-wrap:normal}.preview-label{letter-spacing:1px}.social button{min-width:0}}
