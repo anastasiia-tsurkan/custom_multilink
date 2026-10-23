@@ -49,7 +49,14 @@
     "Donate now": "Пожертвовать",
     "Opens GivingFuel in a new tab. No payment details are collected on this site.": "GivingFuel откроется в новой вкладке. Этот сайт не собирает платёжные данные.",
     "Donations are completed on GivingFuel. Other options open the provider’s website.": "Пожертвования совершаются на GivingFuel. Другие способы помощи открывают сайт платёжного сервиса.",
-    "INFORMATION": "ИНФОРМАЦИЯ"
+    "INFORMATION": "ИНФОРМАЦИЯ",
+    "Choose your amount and complete your donation in the GivingFuel form below.": "Выберите сумму и завершите пожертвование в форме GivingFuel ниже.",
+    "The form is provided by GivingFuel. Payment details are entered directly with the provider.": "Форму предоставляет GivingFuel. Платёжные данные вводятся непосредственно в сервисе.",
+    "Complete your donation": "Сделайте пожертвование",
+    "Choose your amount and donation frequency below. The GivingFuel form has its own language settings.": "Выберите сумму и периодичность ниже. Язык формы настраивается отдельно в GivingFuel.",
+    "Form not loading?": "Форма не загружается?",
+    "Open GivingFuel in a new tab": "Открыть GivingFuel в новой вкладке",
+    "GivingFuel donation form — Safe Shelter for Girls in West Pokot": "Форма пожертвования GivingFuel — приют для девочек в Западном Покоте"
   },
   "runtime": {
     "gift": "Ваш взнос",

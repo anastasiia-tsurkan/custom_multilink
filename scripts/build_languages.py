@@ -23,7 +23,7 @@ class Page(HTMLParser):
             return
         if tag == 'html': attrs['lang'] = self.code
         for key, value in attrs.items():
-            if key in ('aria-label', 'alt', 'placeholder', 'content') and value:
+            if key in ('aria-label', 'alt', 'placeholder', 'content', 'title') and value:
                 attrs[key] = languages[self.code]['text'].get(value, value)
             if key in ('src','srcset','href') and value and (value.startswith('assets/') or value in ('styles.css','app.js')):
                 attrs[key] = self.prefix + value

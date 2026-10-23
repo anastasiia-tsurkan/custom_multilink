@@ -49,7 +49,14 @@
     "Donate now": "Donate now",
     "Opens GivingFuel in a new tab. No payment details are collected on this site.": "Opens GivingFuel in a new tab. No payment details are collected on this site.",
     "Donations are completed on GivingFuel. Other options open the provider’s website.": "Donations are completed on GivingFuel. Other options open the provider’s website.",
-    "INFORMATION": "INFORMATION"
+    "INFORMATION": "INFORMATION",
+    "Choose your amount and complete your donation in the GivingFuel form below.": "Choose your amount and complete your donation in the GivingFuel form below.",
+    "The form is provided by GivingFuel. Payment details are entered directly with the provider.": "The form is provided by GivingFuel. Payment details are entered directly with the provider.",
+    "Complete your donation": "Complete your donation",
+    "Choose your amount and donation frequency below. The GivingFuel form has its own language settings.": "Choose your amount and donation frequency below. The GivingFuel form has its own language settings.",
+    "Form not loading?": "Form not loading?",
+    "Open GivingFuel in a new tab": "Open GivingFuel in a new tab",
+    "GivingFuel donation form — Safe Shelter for Girls in West Pokot": "GivingFuel donation form — Safe Shelter for Girls in West Pokot"
   },
   "runtime": {
     "gift": "Your gift",

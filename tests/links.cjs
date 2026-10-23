@@ -19,6 +19,8 @@ for(const lang of ['en','uk','ru']){
   const link=page.locator(`a[href="${href}"]`);
   assert.equal(await link.count(),1);assert.equal(await link.getAttribute('target'),'_blank');
   assert.match(await link.getAttribute('rel'),/noopener/);
+  await link.scrollIntoViewIfNeeded();
+  await page.waitForTimeout(250);
   const opened=context.waitForEvent('page');await link.click();const popup=await opened;await popup.waitForLoadState();
   assert.equal(popup.url(),href);await popup.close();
  }

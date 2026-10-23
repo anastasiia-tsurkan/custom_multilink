@@ -1,5 +1,5 @@
 'use strict';
-// Donations use ordinary external links. No payment fields or SDK run on this site.
+// GivingFuel owns the cross-origin checkout. Parent code never reads or processes payment fields.
 const modal = document.querySelector('#notice');
 const language = document.documentElement.lang;
 const dictionary = window.PAGE_TRANSLATIONS[language] || window.PAGE_TRANSLATIONS.en;
