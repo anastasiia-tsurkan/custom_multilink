@@ -22,8 +22,7 @@ const assert = require('node:assert/strict');
    assert.equal(await page.locator('.givingfuel-link').count(),1);
    assert.equal(await page.locator('input').count(),0);
    assert.equal(await page.locator('iframe').getAttribute('allow'),'payment');
-   await page.locator('.givingfuel-scroll').click();
-   assert(new URL(page.url()).hash==='#donate');
+   assert.equal(await page.locator('.hosted-donation').count(),0);
    for(const button of await page.locator('[data-demo]').all()){
     await button.scrollIntoViewIfNeeded();
     // Allow the cross-origin frame compositor to settle after a long scroll.
