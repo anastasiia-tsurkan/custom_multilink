@@ -44,7 +44,6 @@
     "Got it": "Зрозуміло",
     "GivingFuel checkout": "Перехід до GivingFuel",
     "Give hope. Make a difference.": "Даруйте надію. Змінюйте життя.",
-    "Safe shelter for girls in West Pokot": "Безпечний притулок для дівчат у Західному Покоті",
     "Choose your donation amount and frequency on GivingFuel, then complete your donation on its checkout page.": "Оберіть суму та періодичність пожертви на GivingFuel і завершіть її на сторінці платіжного сервісу.",
     "Donate now": "Пожертвувати",
     "Opens GivingFuel in a new tab. No payment details are collected on this site.": "GivingFuel відкриється в новій вкладці. Цей сайт не збирає платіжних даних.",
@@ -56,7 +55,8 @@
     "Choose your amount and donation frequency below. The GivingFuel form has its own language settings.": "Оберіть суму та періодичність нижче. Мова форми налаштовується окремо в GivingFuel.",
     "Form not loading?": "Форма не завантажується?",
     "Open GivingFuel in a new tab": "Відкрити GivingFuel у новій вкладці",
-    "GivingFuel donation form — Safe Shelter for Girls in West Pokot": "Форма пожертви GivingFuel — притулок для дівчат у Західному Покоті"
+    "Support for schools in Turkana": "Підтримка шкіл у Туркані",
+    "GivingFuel donation form — Support for schools in Turkana": "Форма пожертви GivingFuel — підтримка шкіл у Туркані"
   },
   "runtime": {
     "gift": "Ваш внесок",

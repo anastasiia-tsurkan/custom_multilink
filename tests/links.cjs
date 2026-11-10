@@ -1,7 +1,7 @@
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 const expected=[
-'https://imoce.givingfuel.com/safe-shelter-for-girls-in-west-pokot',
+'https://imoce.givingfuel.com/turkana-schools-support',
 'https://www.instagram.com/mission_imoce/', 'https://www.facebook.com/imoce',
 'https://www.imoce.org/', 'https://www.youtube.com/@imocemanuel',
 'https://venmo.com/u/Anatoliy-Kolomiyets', 'https://www.paypal.com/paypalme/imoce',
@@ -15,6 +15,7 @@ await context.route('**/*',route=>route.request().url().startsWith('http://127.0
 const page=await context.newPage();
 for(const lang of ['en','uk','ru']){
  await page.goto(`http://127.0.0.1:8000/${lang}/`);
+ assert.equal(await page.locator('.givingfuel-frame').getAttribute('src'),expected[0]);
  for(const href of expected){
   const link=page.locator(`a[href="${href}"]`);
   assert.equal(await link.count(),1);assert.equal(await link.getAttribute('target'),'_blank');
