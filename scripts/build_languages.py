@@ -1,5 +1,6 @@
 """Generate static language pages and the shared runtime dictionary. No dependencies."""
 import json
+import re
 from html import escape
 from html.parser import HTMLParser
 from pathlib import Path
@@ -8,19 +9,21 @@ root = Path(__file__).resolve().parent.parent
 languages = {code: json.loads((root / 'translations' / (code + '.json')).read_text()) for code in ('en', 'uk', 'ru')}
 labels = {'en': 'English', 'uk': 'Українська', 'ru': 'Русский'}
 class Page(HTMLParser):
-    def __init__(self, code, nested):
+    def __init__(self, code, nested, page_name="index.html"):
         super().__init__(convert_charrefs=True)
         self.code, self.prefix = code, '../' if nested else ''
         self.out, self.skip = [], False
+        self.page_name, self.legal_copy = page_name, False
     def handle_decl(self, decl): self.out.append('<!' + decl + '>')
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == 'span' and attrs.get('class') == 'language':
             self.skip = True
             title = {'en': 'Choose language', 'uk': 'Оберіть мову', 'ru': 'Выберите язык'}[self.code]
-            links = ''.join(f'<a href="{self.prefix}{code}/" lang="{code}" hreflang="{code}" aria-label="{labels[code]}"' + (' aria-current="page"' if code == self.code else '') + f'>{('UA' if code == 'uk' else code.upper())}</a>' for code in languages)
+            links = ''.join(f'<a href="{self.prefix}{code}/{self.page_name if self.page_name != "index.html" else ""}" lang="{code}" hreflang="{code}" aria-label="{labels[code]}"' + (' aria-current="page"' if code == self.code else '') + f'>{('UA' if code == 'uk' else code.upper())}</a>' for code in languages)
             self.out.append(f'<nav class="languages" aria-label="{title}">{links}</nav>')
             return
+        if tag == 'article' and attrs.get('class') == 'legal-copy': self.legal_copy = True
         if tag == 'html': attrs['lang'] = self.code
         for key, value in attrs.items():
             if key in ('aria-label', 'alt', 'placeholder', 'content', 'title') and value:
@@ -34,19 +37,36 @@ class Page(HTMLParser):
         if self.skip and tag == 'span': self.skip = False; return
         if tag == 'head':
             for code in languages:
-                self.out.append(f'<link rel="alternate" hreflang="{code}" href="{self.prefix}{code}/">')
+                self.out.append(f'<link rel="alternate" hreflang="{code}" href="{self.prefix}{code}/{self.page_name if self.page_name != "index.html" else ""}">')
+        if tag == 'article': self.legal_copy = False
         self.out.append('</'+tag+'>')
     def handle_data(self, data):
         if self.skip: return
+        if self.legal_copy:
+            self.out.append(escape(data)); return
         stripped = data.strip()
         self.out.append(escape(data.replace(stripped, languages[self.code]['text'].get(stripped, stripped))) if stripped else data)
 
 source = (root/'templates/index.html').read_text()
-for code in languages:
-    for nested in ([False, True] if code == 'en' else [True]):
-        page = Page(code, nested); page.feed(source)
-        target = root / code / 'index.html' if nested else root / 'index.html'
-        target.parent.mkdir(exist_ok=True)
-        target.write_text(''.join(page.out))
+legal_pages = {'privacy.html': ('Privacy Policy', 'privacy-body.html'), 'terms.html': ('Terms of Use', 'terms-body.html'), 'donation-policy.html': ('Donation & Refund Policy', 'donation-policy-body.html')}
+sources = {'index.html': source}
+for filename, (title, body_file) in legal_pages.items():
+    body = (root/'templates'/body_file).read_text()
+    if filename == 'terms.html':
+        body = body.replace('our Donation Policy.', 'our <a href="donation-policy.html">Donation Policy</a>.')
+    nav = '<nav class="legal-nav" aria-label="Policies">' + ''.join(f'<a href="{path}"' + (' aria-current="page"' if path == filename else '') + f'>{escape(name)}</a>' for path,(name,_) in legal_pages.items()) + '</nav>'
+    content = '<main id="main" class="legal-page wrap"><a class="back-link" href="./">← <span>Back to donations</span></a>' + nav + '<p class="legal-language-note">The policy text below is provided in English.</p><article class="legal-copy" lang="en">' + body + '</article></main>'
+    page = re.sub(r'<main id="main">.*?</main>', lambda _: content, source, flags=re.S)
+    page = re.sub(r'<title>.*?</title>', lambda _: '<title>' + escape(title) + ' · IMOCE</title>', page)
+    page = page.replace('href="#main" aria-label="IMOCE home"', 'href="./" aria-label="IMOCE home"')
+    page = page.replace('<script src="assets/vendor/iframeResizer.min.js" defer></script>', '')
+    sources[filename] = page
+for filename, source in sources.items():
+    for code in languages:
+        for nested in ([False, True] if code == 'en' else [True]):
+            page = Page(code, nested, filename); page.feed(source)
+            target = root / code / filename if nested else root / filename
+            target.parent.mkdir(exist_ok=True)
+            target.write_text(''.join(page.out))
 (root/'locales.js').write_text('// Generated by scripts/build_languages.py\nwindow.PAGE_TRANSLATIONS = '+json.dumps(languages,ensure_ascii=False)+';\n')
-print('Generated /en/, /uk/, /ru/ and English root page')
+print('Generated donation and legal pages for /en/, /uk/, /ru/ and English root')

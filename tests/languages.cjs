@@ -35,14 +35,7 @@ const assert = require('node:assert/strict');
     await page.locator('.givingfuel-scroll').click();
     assert(new URL(page.url()).hash==='#donate');
    }
-   for(const button of await page.locator('[data-demo]').all()){
-    await button.scrollIntoViewIfNeeded();
-    // Allow the cross-origin frame compositor to settle after a long scroll.
-    await page.waitForTimeout(250);
-    await button.click();assert(await page.locator('dialog').isVisible());
-    if(lang!=='en')assert(!/not connected|after approval/.test(await page.locator('#notice-text').textContent()));
-    await page.locator('.dismiss').click();
-   }
+
    await page.reload();
    if([390,1440].includes(width))await page.screenshot({path:`artifacts/${lang}-${width}.png`,fullPage:true});
   }
@@ -50,6 +43,6 @@ const assert = require('node:assert/strict');
   for(const target of ['en','uk','ru']){await page.goto(`http://127.0.0.1:8000/${lang}/`);await page.locator(`.languages a[lang="${target}"]`).click();assert.equal(await page.locator('html').getAttribute('lang'),target);}
  }
  const nojs=await browser.newContext({javaScriptEnabled:false});await nojs.route('https://imoce.givingfuel.com/**', route=>route.fulfill({contentType:'text/html',body:'GivingFuel layout fixture'}));const staticPage=await nojs.newPage();await staticPage.goto('http://127.0.0.1:8000/uk/');assert.match(await staticPage.locator('h1').textContent(),/Допомагаємо/);await staticPage.locator('.languages a[lang="ru"]').click();assert.match(await staticPage.locator('h1').textContent(),/Помогаем/);await nojs.close();
- assert.deepEqual(errors,[]);console.log('PASS: 3 languages × 4 widths, translated embedded checkout layout (fixture) and legal dialogs, all demo buttons, 9 language navigation paths, images, no overflow, static translations without JavaScript.');
+ assert.deepEqual(errors,[]);console.log('PASS: 3 languages × 4 widths, translated embedded checkout layout (fixture) and policy links, 9 language navigation paths, images, no overflow, static translations without JavaScript.');
  } finally {await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1});

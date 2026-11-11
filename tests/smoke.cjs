@@ -21,17 +21,11 @@ const assert = require('node:assert/strict');
   assert.equal(await page.locator('input').count(),0);
   assert.equal(await page.locator('iframe').getAttribute('allow'),'payment');
   assert.equal(await page.locator('iframe').getAttribute('height'),'1100');
-  for (const button of await page.locator('[data-demo]').all()) {
-   await button.scrollIntoViewIfNeeded();
-    // Allow the cross-origin frame compositor to settle after a long scroll.
-    await page.waitForTimeout(250);
-    await button.click(); assert(await page.locator('dialog').isVisible());
-   await page.locator('.dismiss').click();
-  }
+
   await page.reload();
   await page.screenshot({path:`artifacts/preview-${width}.png`,fullPage:true});
  }
  assert.deepEqual(errors,[]);assert.deepEqual(outbound,[]);
- console.log('PASS: 320, 390, 768, 1440px; GivingFuel embed layout (fixture), no local payment fields, 2 legal placeholder buttons, dialogs, no overflow, no external requests or JS errors.');
+ console.log('PASS: 320, 390, 768, 1440px; GivingFuel embed layout (fixture), no local payment fields, legal page links, no overflow, no external requests or JS errors.');
  } finally { await browser.close(); }
 })().catch(e=>{console.error(e);process.exitCode=1;});

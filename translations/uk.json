@@ -56,7 +56,11 @@
     "Form not loading?": "Форма не завантажується?",
     "Open GivingFuel in a new tab": "Відкрити GivingFuel у новій вкладці",
     "Support for schools in Turkana": "Підтримка шкіл у Туркані",
-    "GivingFuel donation form — Support for schools in Turkana": "Форма пожертви GivingFuel — підтримка шкіл у Туркані"
+    "GivingFuel donation form — Support for schools in Turkana": "Форма пожертви GivingFuel — підтримка шкіл у Туркані",
+    "Terms of Use": "Умови користування",
+    "Donation & Refund Policy": "Політика пожертв і повернень",
+    "Back to donations": "До сторінки пожертв",
+    "The policy text below is provided in English.": "Текст політики нижче надано англійською мовою."
   },
   "runtime": {
     "gift": "Ваш внесок",

@@ -25,7 +25,7 @@ for(const lang of ['en','uk','ru']){
   const opened=context.waitForEvent('page');await link.click();const popup=await opened;await popup.waitForLoadState();
   assert.equal(popup.url(),href);await popup.close();
  }
- assert.equal(await page.locator('[data-demo]').count(),2);
+ assert.equal(await page.locator('[data-demo]').count(),0);
 }
 await page.setViewportSize({width:1440,height:1000});await page.goto('http://127.0.0.1:8000/en/');
 await page.screenshot({path:'artifacts/linked-desktop.png',fullPage:true});
