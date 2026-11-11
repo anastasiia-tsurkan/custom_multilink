@@ -24,7 +24,13 @@ const assert = require('node:assert/strict');
    assert.equal(await page.locator('iframe').getAttribute('allow'),'payment');
    assert.equal(await page.locator('.form-area').isVisible(),width>760);
    const titles={en:'Donate now',uk:'Пожертвувати',ru:'Пожертвовать'};
-   assert.equal(await page.locator('#donate-title').textContent(),titles[lang]);
+   assert.equal(await page.locator('.desktop-donate-title').textContent(),titles[lang]);
+   assert.equal(await page.locator('.mobile-donate-button').isVisible(),width<=760);
+   assert.equal(await page.locator('.payment-brand img').count(),3);
+   if(width<=760){
+    await page.locator('.mobile-donate-button').click();
+    assert.equal(new URL(page.url()).hash,'#givingfuel-checkout');
+   }
    if(width>760){
     await page.locator('.givingfuel-scroll').click();
     assert(new URL(page.url()).hash==='#donate');
