@@ -60,7 +60,12 @@
     "Terms of Use": "Terms of Use",
     "Donation & Refund Policy": "Donation & Refund Policy",
     "Back to donations": "Back to donations",
-    "The policy text below is provided in English.": "The policy text below is provided in English."
+    "The policy text below is provided in English.": "The policy text below is provided in English.",
+    "Continue to GivingFuel to choose your amount and complete your donation.": "Continue to GivingFuel to choose your amount and complete your donation.",
+    "Checkout and payment confirmation are provided directly by GivingFuel.": "Checkout and payment confirmation are provided directly by GivingFuel.",
+    "Continue to GivingFuel to choose your amount and complete your donation. Checkout and payment confirmation are provided directly by GivingFuel.": "Continue to GivingFuel to choose your amount and complete your donation. Checkout and payment confirmation are provided directly by GivingFuel.",
+    "Continue to GivingFuel": "Continue to GivingFuel",
+    "You will continue in this tab on GivingFuel. If you were already charged without seeing confirmation, check your receipt or contact IMOCE before trying again.": "You will continue in this tab on GivingFuel. If you were already charged without seeing confirmation, check your receipt or contact IMOCE before trying again."
   },
   "runtime": {
     "gift": "Your gift",

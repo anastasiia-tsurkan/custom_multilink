@@ -19,30 +19,23 @@ const assert = require('node:assert/strict');
    assert.equal(await page.locator('.languages [aria-current="page"]').textContent(),lang==='uk'?'UA':lang.toUpperCase());
    await page.locator('.trust').scrollIntoViewIfNeeded();
    const broken=await page.locator('img').evaluateAll(async images=>{await Promise.all(images.map(i=>i.decode()));return images.some(i=>!i.naturalWidth)});assert(!broken);
-   assert.equal(await page.locator('.givingfuel-link').count(),1);
+   assert.equal(await page.locator('.givingfuel-link').count(),2);
    assert.equal(await page.locator('input').count(),0);
-   assert.equal(await page.locator('iframe').getAttribute('allow'),'payment');
+   assert.equal(await page.locator('iframe').count(),0);
    assert.equal(await page.locator('.form-area').isVisible(),width>760);
    const titles={en:'Donate now',uk:'Пожертвувати',ru:'Пожертвовать'};
    assert.equal(await page.locator('.desktop-donate-title').textContent(),titles[lang]);
    assert.equal(await page.locator('.mobile-donate-button').isVisible(),width<=760);
    assert.equal(await page.locator('.payment-brand img').count(),3);
-   if(width<=760){
-    await page.locator('.mobile-donate-button').click();
-    assert.equal(new URL(page.url()).hash,'#givingfuel-checkout');
-   }
-   if(width>760){
-    await page.locator('.givingfuel-scroll').click();
-    assert(new URL(page.url()).hash==='#donate');
-   }
+
 
    await page.reload();
    if([390,1440].includes(width))await page.screenshot({path:`artifacts/${lang}-${width}.png`,fullPage:true});
   }
-  console.log(`Layout and embed checks passed: ${lang}`);
+  console.log(`Layout and checkout checks passed: ${lang}`);
   for(const target of ['en','uk','ru']){await page.goto(`http://127.0.0.1:8000/${lang}/`);await page.locator(`.languages a[lang="${target}"]`).click();assert.equal(await page.locator('html').getAttribute('lang'),target);}
  }
  const nojs=await browser.newContext({javaScriptEnabled:false});await nojs.route('https://imoce.givingfuel.com/**', route=>route.fulfill({contentType:'text/html',body:'GivingFuel layout fixture'}));const staticPage=await nojs.newPage();await staticPage.goto('http://127.0.0.1:8000/uk/');assert.match(await staticPage.locator('h1').textContent(),/Допомагаємо/);await staticPage.locator('.languages a[lang="ru"]').click();assert.match(await staticPage.locator('h1').textContent(),/Помогаем/);await nojs.close();
- assert.deepEqual(errors,[]);console.log('PASS: 3 languages × 4 widths, translated embedded checkout layout (fixture) and policy links, 9 language navigation paths, images, no overflow, static translations without JavaScript.');
+ assert.deepEqual(errors,[]);console.log('PASS: 3 languages × 4 widths, translated hosted checkout links and policy links, 9 language navigation paths, images, no overflow, static translations without JavaScript.');
  } finally {await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1});

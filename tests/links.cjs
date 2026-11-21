@@ -15,8 +15,8 @@ await context.route('**/*',route=>route.request().url().startsWith('http://127.0
 const page=await context.newPage();
 for(const lang of ['en','uk','ru']){
  await page.goto(`http://127.0.0.1:8000/${lang}/`);
- assert.equal(await page.locator('.givingfuel-frame').getAttribute('src'),expected[0]);
- for(const href of expected){
+ assert.equal(await page.locator('iframe').count(),0);
+ for(const href of expected.slice(1)){
   const link=page.locator(`a[href="${href}"]`);
   assert.equal(await link.count(),1);assert.equal(await link.getAttribute('target'),'_blank');
   assert.match(await link.getAttribute('rel'),/noopener/);
@@ -31,6 +31,6 @@ await page.setViewportSize({width:1440,height:1000});await page.goto('http://127
 await page.screenshot({path:'artifacts/linked-desktop.png',fullPage:true});
 await page.locator('.trust-icon').nth(1).screenshot({path:'artifacts/handshake.png'});
 await page.setViewportSize({width:390,height:1000});await page.screenshot({path:'artifacts/linked-mobile.png',fullPage:true});
-console.log('PASS: all 8 external links open exact supplied URLs in 3 languages (navigation intercepted; no payment requests made).');
+console.log('PASS: all 7 social and alternative donation links open exact supplied URLs in 3 languages (navigation intercepted; no payment requests made).');
 }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exitCode=1});

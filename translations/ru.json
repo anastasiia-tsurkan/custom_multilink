@@ -60,7 +60,12 @@
     "Terms of Use": "Условия использования",
     "Donation & Refund Policy": "Политика пожертвований и возвратов",
     "Back to donations": "К странице пожертвований",
-    "The policy text below is provided in English.": "Текст политики ниже представлен на английском языке."
+    "The policy text below is provided in English.": "Текст политики ниже представлен на английском языке.",
+    "Continue to GivingFuel to choose your amount and complete your donation.": "Перейдите в GivingFuel, чтобы выбрать сумму и завершить пожертвование.",
+    "Checkout and payment confirmation are provided directly by GivingFuel.": "Оплату и подтверждение платежа обеспечивает непосредственно GivingFuel.",
+    "Continue to GivingFuel to choose your amount and complete your donation. Checkout and payment confirmation are provided directly by GivingFuel.": "Перейдите в GivingFuel, чтобы выбрать сумму и завершить пожертвование. Оплата и подтверждение происходят непосредственно на GivingFuel.",
+    "Continue to GivingFuel": "Перейти в GivingFuel",
+    "You will continue in this tab on GivingFuel. If you were already charged without seeing confirmation, check your receipt or contact IMOCE before trying again.": "GivingFuel откроется в этой вкладке. Если средства уже списаны, но подтверждение не появилось, проверьте квитанцию или свяжитесь с IMOCE перед повторной попыткой."
   },
   "runtime": {
     "gift": "Ваш взнос",

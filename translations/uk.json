@@ -60,7 +60,12 @@
     "Terms of Use": "Умови користування",
     "Donation & Refund Policy": "Політика пожертв і повернень",
     "Back to donations": "До сторінки пожертв",
-    "The policy text below is provided in English.": "Текст політики нижче надано англійською мовою."
+    "The policy text below is provided in English.": "Текст політики нижче надано англійською мовою.",
+    "Continue to GivingFuel to choose your amount and complete your donation.": "Перейдіть до GivingFuel, щоб обрати суму й завершити пожертву.",
+    "Checkout and payment confirmation are provided directly by GivingFuel.": "Оплату та підтвердження платежу забезпечує безпосередньо GivingFuel.",
+    "Continue to GivingFuel to choose your amount and complete your donation. Checkout and payment confirmation are provided directly by GivingFuel.": "Перейдіть до GivingFuel, щоб обрати суму й завершити пожертву. Оплата та підтвердження відбуваються безпосередньо на GivingFuel.",
+    "Continue to GivingFuel": "Перейти до GivingFuel",
+    "You will continue in this tab on GivingFuel. If you were already charged without seeing confirmation, check your receipt or contact IMOCE before trying again.": "GivingFuel відкриється в цій вкладці. Якщо кошти вже списано, але підтвердження не з’явилося, перевірте квитанцію або зверніться до IMOCE перед повторною спробою."
   },
   "runtime": {
     "gift": "Ваш внесок",
