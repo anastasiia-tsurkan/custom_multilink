@@ -27,3 +27,6 @@ footer a{display:inline-flex;align-items:center;min-height:44px;padding:8px;colo
 
 /* Give the payment provider a first-party checkout context, including its receipt page. */
 .hosted-checkout{max-width:760px;padding-bottom:32px}.hosted-checkout .givingfuel-link{display:block;text-align:center;text-decoration:none}.checkout-note{font-size:14px;line-height:1.6}.hosted-checkout .mobile-donate-button{display:none}.desktop-checkout-link{max-width:440px;margin:24px 0}.hosted-checkout h2{margin-bottom:20px}@media(max-width:760px){.hosted-checkout .mobile-donate-button{display:block}.hosted-checkout .desktop-checkout-link{display:none}}
+
+/* Desktop already has the main GivingFuel action in the hero card. */
+@media(min-width:761px){.hosted-checkout{display:none}}

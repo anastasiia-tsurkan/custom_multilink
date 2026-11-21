@@ -17,7 +17,8 @@ const url='https://imoce.givingfuel.com/turkana-schools-support';
   await page.goto(local);
   assert.equal(await page.locator('iframe, form, input').count(),0);
   const ctas=page.locator(`a[href="${url}"]:visible`);
-  const count=await ctas.count();assert(count>=1);
+  const count=await ctas.count();assert.equal(count,1,'Show exactly one GivingFuel action per viewport');
+  assert.equal(await page.locator('.hosted-checkout').isVisible(),width<=760);
   for(let i=0;i<count;i++){
    await page.goto(local);
    const cta=page.locator(`a[href="${url}"]:visible`).nth(i);
