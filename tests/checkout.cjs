@@ -20,6 +20,8 @@ const url='https://imoce.givingfuel.com/turkana-schools-support';
   const ctas=page.locator(`a[href="${url}"]:visible`);
   const count=await ctas.count();assert.equal(count,1,'Show exactly one GivingFuel action per viewport');
   assert.equal(await page.locator('.mobile-donation').isVisible(),width<=760);
+  assert.equal(await page.locator('.mobile-payment-note').isVisible(),width<=760);
+  assert.match(await page.locator('.mobile-payment-note').textContent(),/GivingFuel/);
   for(let i=0;i<count;i++){
    await page.goto(local);
    const cta=page.locator(`a[href="${url}"]:visible`).nth(i);

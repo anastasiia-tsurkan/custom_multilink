@@ -30,3 +30,5 @@ footer a{display:inline-flex;align-items:center;min-height:44px;padding:8px;colo
 
 /* Only a single mobile donation button; no duplicate desktop checkout block. */
 .mobile-donation{display:none}@media(max-width:760px){.mobile-donation{display:block;padding-block:24px 32px}.mobile-donation .mobile-donate-button{display:block;text-align:center;text-decoration:none}}
+
+.mobile-payment-note{margin:16px 0 0;text-align:center;font-size:13px;line-height:1.6;color:var(--muted)}
