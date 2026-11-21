@@ -63,14 +63,12 @@
     "The policy text below is provided in English.": "Текст политики ниже представлен на английском языке.",
     "Continue to GivingFuel to choose your amount and complete your donation.": "Выберите сумму пожертвования и поддержите обучение и ежедневное питание детей.",
     "Checkout and payment confirmation are provided directly by GivingFuel.": "Оплату и подтверждение платежа обеспечивает непосредственно GivingFuel.",
-    "Continue to GivingFuel to choose your amount and complete your donation. Checkout and payment confirmation are provided directly by GivingFuel.": "Перейдите в GivingFuel, чтобы выбрать сумму и завершить пожертвование. Оплата и подтверждение происходят непосредственно на GivingFuel.",
-    "Continue to GivingFuel": "Перейти в GivingFuel",
-    "You will continue in this tab on GivingFuel. If you were already charged without seeing confirmation, check your receipt or contact IMOCE before trying again.": "GivingFuel откроется в этой вкладке. Если средства уже списаны, но подтверждение не появилось, проверьте квитанцию или свяжитесь с IMOCE перед повторной попыткой.",
     "Our goal is to provide education and daily meals for 1,000 children. Just $25 a month can help support one child's education and meals.": "Наша цель — обеспечить образованием и ежедневным питанием 1 000 детей. Всего $25 в месяц помогут поддержать обучение и питание одного ребёнка.",
     "Help create more opportunities for their future.": "Помогите детям получить больше возможностей для будущего.",
     "Help Children Learn and Grow": "Поддержите образование детей в Кении",
     "Supporting Schools in the Turkana Desert": "Поддержка школ в пустыне Туркана",
-    "Choose your donation amount to support children's education and daily meals.": "Выберите сумму пожертвования и поддержите обучение и ежедневное питание детей."
+    "Choose your donation amount to support children's education and daily meals.": "Выберите сумму пожертвования и поддержите обучение и ежедневное питание детей.",
+    "Donate through GivingFuel": "Пожертвовать через GivingFuel"
   },
   "runtime": {
     "gift": "Ваш взнос",

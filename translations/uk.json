@@ -63,14 +63,12 @@
     "The policy text below is provided in English.": "Текст політики нижче надано англійською мовою.",
     "Continue to GivingFuel to choose your amount and complete your donation.": "Оберіть суму пожертви та підтримайте навчання й щоденне харчування дітей.",
     "Checkout and payment confirmation are provided directly by GivingFuel.": "Оплату та підтвердження платежу забезпечує безпосередньо GivingFuel.",
-    "Continue to GivingFuel to choose your amount and complete your donation. Checkout and payment confirmation are provided directly by GivingFuel.": "Перейдіть до GivingFuel, щоб обрати суму й завершити пожертву. Оплата та підтвердження відбуваються безпосередньо на GivingFuel.",
-    "Continue to GivingFuel": "Перейти до GivingFuel",
-    "You will continue in this tab on GivingFuel. If you were already charged without seeing confirmation, check your receipt or contact IMOCE before trying again.": "GivingFuel відкриється в цій вкладці. Якщо кошти вже списано, але підтвердження не з’явилося, перевірте квитанцію або зверніться до IMOCE перед повторною спробою.",
     "Our goal is to provide education and daily meals for 1,000 children. Just $25 a month can help support one child's education and meals.": "Наша мета — забезпечувати освітою та щоденним харчуванням 1 000 дітей. Лише $25 на місяць допоможуть підтримати навчання та харчування однієї дитини.",
     "Help create more opportunities for their future.": "Допоможіть дітям отримати більше можливостей для майбутнього.",
     "Help Children Learn and Grow": "Підтримайте освіту дітей у Кенії",
     "Supporting Schools in the Turkana Desert": "Підтримка шкіл у пустелі Туркана",
-    "Choose your donation amount to support children's education and daily meals.": "Оберіть суму пожертви та підтримайте навчання й щоденне харчування дітей."
+    "Choose your donation amount to support children's education and daily meals.": "Оберіть суму пожертви та підтримайте навчання й щоденне харчування дітей.",
+    "Donate through GivingFuel": "Пожертвувати через GivingFuel"
   },
   "runtime": {
     "gift": "Ваш внесок",

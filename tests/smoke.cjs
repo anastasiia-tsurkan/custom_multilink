@@ -17,7 +17,7 @@ const assert = require('node:assert/strict');
   assert((await cover.evaluate(img => img.currentSrc)).endsWith(width <= 760 ? '/assets/cover-mobile.png' : '/assets/cover-desktop.jpg'), 'Wrong responsive cover');
   assert(await page.locator('.brand img, footer img').evaluateAll(images => images.every(img => img.complete && img.naturalWidth > 0)), 'Logo did not load');
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`Overflow at ${width}`);
-  assert.equal(await page.locator('.givingfuel-link').count(),2);
+  assert.equal(await page.locator('.givingfuel-link').count(),1);
   assert.equal(await page.locator('input').count(),0);
   assert.equal(await page.locator('iframe').count(),0);
 

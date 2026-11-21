@@ -19,12 +19,12 @@ const assert = require('node:assert/strict');
    assert.equal(await page.locator('.languages [aria-current="page"]').textContent(),lang==='uk'?'UA':lang.toUpperCase());
    await page.locator('.trust').scrollIntoViewIfNeeded();
    const broken=await page.locator('img').evaluateAll(async images=>{await Promise.all(images.map(i=>i.decode()));return images.some(i=>!i.naturalWidth)});assert(!broken);
-   assert.equal(await page.locator('.givingfuel-link').count(),2);
+   assert.equal(await page.locator('.givingfuel-link').count(),1);
    assert.equal(await page.locator('input').count(),0);
    assert.equal(await page.locator('iframe').count(),0);
    assert.equal(await page.locator('.form-area').isVisible(),width>760);
    const titles={en:'Donate now',uk:'Пожертвувати',ru:'Пожертвовать'};
-   assert.equal(await page.locator('.desktop-donate-title').textContent(),titles[lang]);
+   assert.equal((await page.locator('.mobile-donate-button').textContent()).replace('→','').trim(),titles[lang]);
    assert.equal(await page.locator('.mobile-donate-button').isVisible(),width<=760);
    assert.equal(await page.locator('.payment-brand img').count(),3);
 
